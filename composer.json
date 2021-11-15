@@ -1,0 +1,13 @@
+{
+    "name": "marco/advent-2021",
+    "type": "project",
+    "require": {
+        "symfony/var-dumper": "^5.3"
+    },
+    "authors": [
+        {
+            "name": "TheCad",
+            "email": "mbeijen1@gmail.com"
+        }
+    ]
+}
