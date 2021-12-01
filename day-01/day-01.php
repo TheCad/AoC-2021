@@ -18,15 +18,15 @@ class Day01 {
 
             fclose($handle);
         } else {
-            echo "Can't find file";
+            dump("Can't find file");
         }
 
         $this->solve();
     }
 
     public function solve() {
-//        echo $this->solveChallenge1();
-        echo $this->solveChallenge2();
+        dump($this->solveChallenge1());
+        dump($this->solveChallenge2());
     }
 
     public function solveChallenge1(): int {
