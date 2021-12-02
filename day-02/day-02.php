@@ -25,7 +25,52 @@ class Day02 {
     }
 
     public function solve() {
-        dump($this->data);
+        dump($this->solveChallenge1());
+        dump($this->solveChallenge2());
+    }
+
+    public function solveChallenge1(): int {
+        $horizontal = 0;
+        $depth = 0;
+        foreach ($this->data as $step) {
+            $direction = explode(' ', $step)[0];
+            $amount = explode(' ', $step)[1];
+            switch ($direction) {
+                case "forward":
+                    $horizontal += $amount;
+                    break;
+                case "down":
+                    $depth += $amount;
+                    break;
+                case "up":
+                    $depth -= $amount;
+                    break;
+            }
+        }
+        return $horizontal * $depth;
+    }
+
+    public function solveChallenge2(): int {
+        $horizontal = 0;
+        $depth = 0;
+        $aim = 0;
+        foreach ($this->data as $step) {
+            $direction = explode(' ', $step)[0];
+            $amount = explode(' ', $step)[1];
+            switch ($direction) {
+                case "forward":
+                    $horizontal += $amount;
+                    $depth += ($aim * $amount);
+                    break;
+                case "down":
+                    $aim += $amount;
+                    break;
+                case "up":
+                    $aim -= $amount;
+                    break;
+            }
+        }
+        return $horizontal * $depth;
     }
 }
 
