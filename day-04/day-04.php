@@ -79,11 +79,7 @@ class Day04 {
                 $notWon[] = $bingoCard;
             }
         }
-        if (count($notWon) === 0) {
-            return true;
-//            return end($hasWon);
-        }
-        return false;
+        return count($notWon) === 0;
     }
 
     private function readInput() {
