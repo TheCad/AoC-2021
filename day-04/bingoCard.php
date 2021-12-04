@@ -16,7 +16,7 @@ class bingoCard {
         foreach ($numberRow as $row) {
             $colIndex = 0;
             foreach ($row as $item) {
-                $this->allNumbers[$rowIndex][$colIndex] = new bingoSpot((int) $item, (int) $rowIndex, (int) $colIndex);
+                $this->allNumbers[$rowIndex][$colIndex] = new bingoSpot((int) $item);
                 $colIndex++;
             }
             $rowIndex++;
