@@ -69,9 +69,9 @@ class Day07 {
         $temp = [];
 
         foreach ($this->data as $item) {
-            $fuelcost = $horpos - $item;
+            $fuelcost = abs($horpos - $item);
             if ($fuelcost < 0) $fuelcost = -$fuelcost;
-            $temp[] = array_sum(range(1, $fuelcost, 1));
+            $temp[] = array_sum(range(0, $fuelcost, 1));
         }
         $res = array_sum($temp);
 
