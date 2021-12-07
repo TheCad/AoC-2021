@@ -2,6 +2,7 @@
 require(__DIR__ . '/../vendor/autoload.php');
 
 class Day18 {
+    public bool $example = false;
     public array $data;
 
     public function __construct() {
@@ -10,7 +11,8 @@ class Day18 {
     }
 
     public function loadData() {
-        $handle = fopen(__DIR__ . '/input', 'r');
+        $file = $this->example ? '/example' : '/input';
+        $handle = fopen(__DIR__ . $file, 'r');
         if ($handle) {
             while (($line = fgets($handle)) !== false) {
                 array_push($this->data, trim($line));
